@@ -1,0 +1,181 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+img, picture, svg, video {
+	display: block;
+	max-width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+    font-family: calibri;
+}
+
+.ludo-board {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 2fr 1fr 2fr;
+    border: 1px solid black;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.full-width {
+    width: 90vw;
+    height: 90vw;
+}
+
+.full-height {
+    width: 90vh;
+    height: 90vh;
+}
+
+.house {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.pawn {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 45px;
+    border: 1px solid black;
+    border-radius: 100%;
+}
+
+.v-paths {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.h-paths {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.path {
+    border: 1px solid black;
+    position: relative;
+}
+
+.path .pawn {
+    position: absolute;
+}
+
+.dice-roller {
+    border: 1px solid black;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice-roller p {
+    text-align: center;
+    font-weight: bold;
+    color: chocolate;
+}
+
+.dices {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    height: 60%;
+}
+
+.dices > div {
+    width: 50%;
+    height: 70%;
+    border-radius: 100%;
+    background-color: chocolate;
+    font-size: 29px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.safe-pawns-container {
+    display: flex;
+    width: 100px;
+}
+
+.msg-el {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+    height: 10vh;
+    padding: 20px;
+    font-size: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.msg-el button {
+    color: brown;
+    background-color: white;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.green-pawn, 
+.green-path {
+    background-color: green;
+}
+
+.red-pawn,
+.red-path {
+    background-color: red;
+}
+
+.yellow-pawn,
+.yellow-path {
+    background-color: yellow;
+}
+
+.blue-pawn,
+.blue-path {
+    background-color: blue;
+}
+
+.active {
+    animation-name: outline-twitch;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes outline-twitch {
+    0% {
+        outline: none;
+    }
+    100% {
+        outline: 8px dotted orange;
+    }
+}
