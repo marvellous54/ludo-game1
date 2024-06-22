@@ -117,6 +117,10 @@ body {
     width: 100px;
 }
 
+.safe-pawns-container > div {
+    width: 50px;
+}
+
 .msg-el {
     position: absolute;
     top: 50%;
